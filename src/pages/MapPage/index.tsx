@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useMemo, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Circle } from 'react-leaflet';
 import segments from './data/segments.json';
 import L from 'leaflet';
 import StatisticsOverlay from './components/Statistics';
@@ -25,12 +25,10 @@ const getParkingStyle = (spot: any) => {
 
   if (reported_empty === true) {
     style['color'] = GREEN;
-    // style['color'] = 'white';
   }
 
   if (reported_empty === false) {
     style['color'] = RED;
-    // style['color'] = 'white';
   }
 
   if (reported_empty !== false && reported_empty !== true && reported_empty !== null) {

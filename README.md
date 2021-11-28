@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Parkingverse Frontend
+You need a JAWG token to access the custom Leaflet tiles, get them at [https://www.jawg.io/lab/](https://www.jawg.io/lab/).
+
+You will also need to set BACKEND_URL, where the frontend can access the server.
+
+Rest of the developments instructions are identical to standard React apps.
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
