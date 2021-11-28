@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 
 import MapPage from './pages/MapPage';
-import {Button, Col, Divider, Layout, Menu, Modal, Row, Space, Statistic, Typography} from 'antd';
+import { Button, Col, Divider, Layout, Menu, Modal, Row, Statistic, Typography } from 'antd';
 import {
   DesktopOutlined,
   PieChartOutlined,
@@ -17,20 +17,14 @@ import distanceSensor from './pages/MapPage/data/distances-has_sensor.json';
 
 import stepsHasSensor from './pages/MapPage/data/steps_before_parked-has_sensor.json';
 import stepsNoSensor from './pages/MapPage/data/steps_before_parked-no_sensor.json';
-import _ from 'lodash';
 
-const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+const { Content, Sider } = Layout;
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   if (!displayOverlay) {
     return <MapPage />;
   }
-
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
 
   const handleOk = () => {
     setIsModalVisible(false);
@@ -72,19 +66,21 @@ function App() {
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
-        footer={[<Button type='primary' key={'close'} onClick={handleCancel}>Close</Button>]}
+        footer={[
+          <Button type="primary" key={'close'} onClick={handleCancel}>
+            Close
+          </Button>,
+        ]}
         width={1200}
       >
         <Row gutter={24}>
           <Col span={12}>
             <Typography.Title level={3}>Time of searching for parking</Typography.Title>
             <Divider />
-
           </Col>
           <Col span={12}>
             <Typography.Title level={3}>Parking distance from destination</Typography.Title>
             <Divider />
-
           </Col>
         </Row>
         <Row gutter={24}>
@@ -98,7 +94,7 @@ function App() {
             <Statistic title="Std 🚕" value={15.466198} precision={2} />
           </Col>
           <Col span={3}>
-            <Statistic title="Std  🚙" value={43.081730} precision={2} />
+            <Statistic title="Std  🚙" value={43.08173} precision={2} />
           </Col>
           <Col span={3}>
             <Statistic title="Mean  🚕" value={23.053408} precision={2} />
@@ -112,7 +108,6 @@ function App() {
           <Col span={3}>
             <Statistic title="Std 🚙 " value={50.401432} precision={2} />
           </Col>
-
         </Row>
         <Row gutter={24}>
           <Col span={12}>

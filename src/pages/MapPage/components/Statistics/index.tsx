@@ -1,10 +1,8 @@
 import React from 'react';
-import {Card, Checkbox, Col, Divider, Progress, Row, Statistic, Typography} from 'antd';
+import { Card, Col, Divider, Progress, Row, Statistic, Typography } from 'antd';
 import { displayOverlay } from '../../../../config';
-import { TooltipItem } from '../TooltipItem';
 const { Title, Text } = Typography;
 import legendPicture from './Legend.png';
-import carLegend from './CarLegend.png';
 import carHorizontal from './CarLegendHorizontal.png';
 import _ from 'lodash';
 
@@ -31,16 +29,18 @@ export const StatisticsOverlay = ({ statistics }: StatisticsOverlayProps) => {
             <Col span={12}>
               <Statistic
                 title="Searching for parking with sensor"
-                value={_.get(statistics, 'searching.has_sensor', '-')+ ' 🚕'}
+                value={_.get(statistics, 'searching.has_sensor', '-') + ' 🚕'}
               />
             </Col>
             <Col span={12}>
               <Statistic
                 title="Searching for parking without sensor"
-                value={_.get(statistics, 'searching.no_sensor', '-')  + ' 🚙'}
+                value={_.get(statistics, 'searching.no_sensor', '-') + ' 🚙'}
               />
             </Col>
-          </Row><br/><Row>
+          </Row>
+          <br />
+          <Row>
             <Col span={12}>
               <Statistic
                 title="Empty spaces"
@@ -53,7 +53,8 @@ export const StatisticsOverlay = ({ statistics }: StatisticsOverlayProps) => {
                 value={_.get(statistics, 'number_of_spots.not_empty', '-')}
               />
             </Col>
-          </Row><br/>
+          </Row>
+          <br />
           <Row>
             <Col span={24}>
               <Text type="secondary">Vehicles with sensor</Text>
@@ -70,14 +71,6 @@ export const StatisticsOverlay = ({ statistics }: StatisticsOverlayProps) => {
           <img src={legendPicture} style={{ width: 190 }} />
         </Card>
       </div>
-      {/*<div style={{ position: 'absolute', zIndex: 1000, bottom: 40, right: 380 }}>*/}
-      {/*  <Card*/}
-      {/*    bordered={false}*/}
-      {/*    style={{ width: 300, borderRadius: 10, boxShadow: 'rgb(19 19 19 / 54%) 0px 8px 24px' }}*/}
-      {/*  >*/}
-      {/*    <img src={carLegend} style={{ width: 250 }} />*/}
-      {/*  </Card>*/}
-      {/*</div>*/}
       <div style={{ position: 'absolute', zIndex: 1000, bottom: 40, right: 370 }}>
         <Card
           bordered={false}
